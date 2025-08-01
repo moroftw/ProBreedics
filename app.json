@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "ProBreedics",
-    "slug": "probreedics",              // litere mici, fără spații
+    "slug": "probreedics",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,9 +15,9 @@
     },
 
     "android": {
-      "package": "com.moroftw.probreedics",  // ⇦ UNIC, nu îl schimba după publicare!
+      "package": "com.moroftw.probreedics",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
@@ -32,7 +32,7 @@
     },
 
     "runtimeVersion": {
-      "policy": "appVersion"          // folosește câmpul version (1.0.0) drept runtime
+      "policy": "appVersion"
     },
 
     "plugins": [
