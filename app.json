@@ -7,13 +7,15 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-
+    "updates": {
+      "url": "https://u.expo.dev/5d573ea7",
+      "fallbackToCacheTimeout": 0
+    },
     "android": {
       "package": "com.moroftw.probreedics",
       "adaptiveIcon": {
@@ -22,22 +24,19 @@
       },
       "edgeToEdgeEnabled": true
     },
-
     "ios": {
       "supportsTablet": true
     },
-
     "web": {
       "favicon": "./assets/favicon.png"
     },
-
     "runtimeVersion": {
       "policy": "appVersion"
     },
-
     "plugins": [
       "expo-sqlite",
-      "expo-font"
+      "expo-font",
+      "expo-splash-screen"
     ]
   }
 }
