@@ -1,0 +1,18 @@
+{
+  "cli": { "version": "3.x" },
+
+  "build": {
+    "production": {
+      "workflow": "managed",
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  },
+
+  "channels": {
+    "production": {
+      "branch": "production"
+    }
+  }
+}
