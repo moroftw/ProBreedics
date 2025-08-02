@@ -2,7 +2,7 @@
   "expo": {
     "name": "ProBreedics",
     "slug": "probreedics",
-    "version": "1.0.0",
+    "version": "1.5.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -13,7 +13,7 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "url": "https://u.expo.dev/5d573ea7",
+      "url": "https://u.expo.dev/5d573ea7-1256-46f2-b439-e71262415e6e",
       "fallbackToCacheTimeout": 0
     },
     "android": {
@@ -37,6 +37,11 @@
       "expo-sqlite",
       "expo-font",
       "expo-splash-screen"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "5d573ea7-1256-46f2-b439-e71262415e6e"
+      }
+    }
   }
 }

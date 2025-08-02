@@ -13,7 +13,7 @@ import { colors, radius } from '../theme';
 type Props = NativeStackScreenProps<RootStackParamList, 'QuickAddDog'>;
 
 export default function QuickAddDogScreen({ navigation }: Props) {
-  const [name, setName] = useState('');
+  const [nickname, setNickname] = useState('');
   const [sex, setSex]   = useState<Sex>('M');
   const [imageUri, setImageUri] = useState('');
   const insets = useSafeAreaInsets();
@@ -30,8 +30,8 @@ export default function QuickAddDogScreen({ navigation }: Props) {
   };
 
   const onSave = async () => {
-    if (!name.trim()) { Alert.alert('Name required'); return; }
-    const payload: Dog = { name: name.trim(), sex, imageUri };
+    if (!nickname.trim()) { Alert.alert('Nickname required'); return; }
+    const payload: Dog = { name: nickname.trim(), sex, imageUri };
     try { await insertDog(payload); navigation.goBack(); }
     catch { Alert.alert('Error', 'Cannot save'); }
   };
@@ -45,6 +45,9 @@ export default function QuickAddDogScreen({ navigation }: Props) {
           {imageUri ? <Image source={{ uri: imageUri }} style={styles.image} /> : <Text style={{ color: colors.primary }}>Add photo</Text>}
         </TouchableOpacity>
 
+        <Text style={styles.label}>Nickname *</Text>
+        <TextInput style={styles.input} value={nickname} onChangeText={setNickname} placeholder="e.g., Spike" />
+
         <Text style={styles.label}>Sex *</Text>
         <View style={styles.row}>
           <TouchableOpacity onPress={() => setSex('M')} style={[styles.chip, sex==='M'&&styles.chipActive(colors.primary)]}>
@@ -54,12 +57,9 @@ export default function QuickAddDogScreen({ navigation }: Props) {
             <Text style={[styles.chipTxt, sex==='F'&&{color:'#fff'}]}>Female</Text>
           </TouchableOpacity>
         </View>
-
-        <Text style={styles.label}>Name *</Text>
-        <TextInput style={styles.input} value={name} onChangeText={setName} placeholder="e.g., Spike" />
       </ScrollView>
 
-      <SaveBar onPress={onSave} disabled={!name.trim()} />
+      <SaveBar onPress={onSave} disabled={!nickname.trim()} />
     </View>
   );
 }
